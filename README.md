@@ -1,3 +1,14 @@
+# Fork Notes
+This is a modified version of deezer-downloader with the following changes in the dockerfile:
+
+- Is based on Fedora instead of Ubuntu, for no real reason
+- yt-dlp and gunicorn are installed through system package manager instead of through pip
+- Copies files directly from repo instead of git cloning it to remove redundant download
+- Doesn't use virtualenv (it's a container, so isn't really necessary)
+- *Runs as root in the container*, which makes the usage much simpler with rootless podman.
+
+# Original Readme
+
 ## Music Downloader  :notes: :headphones: :dancer: :unicorn:
 ![tests](https://github.com/kmille/deezer-downloader/workflows/tests/badge.svg) ![push image to dockerhub](https://github.com/kmille/deezer-downloader/workflows/push%20to%20dockerhub/badge.svg) ![docker pulls](https://img.shields.io/docker/pulls/kmille2/deezer-downloader) ![latest tag](https://img.shields.io/github/v/tag/kmille/deezer-downloader?sort=semver) ![Python 3.6](https://img.shields.io/badge/python-%3E=3.6-blue.svg)
 
